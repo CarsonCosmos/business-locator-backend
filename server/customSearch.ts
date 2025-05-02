@@ -16,14 +16,7 @@ export async function runCustomSearch(name: string, city: string) {
     const link = $(el).attr("href");
     if (link && link.startsWith("/url?q=")) {
       const clean = link.split("/url?q=")[1].split("&")[0];
-      if (
-        !clean.includes("google.") &&
-        !clean.includes("facebook.") &&
-        !clean.includes("yelp.") &&
-        !clean.includes("map.") &&
-        !clean.includes("linkedin.") &&
-        !clean.includes("tripadvisor.")
-      ) {
+      if (!clean.includes("google.") && !clean.includes("facebook.") && !clean.includes("yelp.")) {
         results.push({ website: clean });
       }
     }
